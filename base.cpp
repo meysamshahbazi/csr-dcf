@@ -58,11 +58,7 @@ int main(int argc, char** argv)
     // parameters.
     Ptr<TrackerCSRT> tracker = TrackerCSRT::create(parameters);
 
-    // const char* param_file_path = "/home/amuhic/Workspace/3_dip/params.yml";
-    // FileStorage fs(params_file_path, FileStorage::WRITE);
-    // tracker->write(fs);
-    // FileStorage fs(param_file_path, FileStorage::READ);
-    // tracker->read( fs.root());
+
 
     // set input video
     std::string video = argv[1];
@@ -73,60 +69,9 @@ int main(int argc, char** argv)
 
     // target bounding box
     Rect roi;
-    // if (argc > 2) {
-    //     // read first line of ground-truth file
-    //     std::string groundtruthPath = argv[2];
-    //     std::ifstream gtIfstream(groundtruthPath.c_str());
-    //     std::string gtLine;
-    //     getline(gtIfstream, gtLine);
-    //     gtIfstream.close();
-
-    //     // parse the line by elements
-    //     std::stringstream gtStream(gtLine);
-    //     std::string element;
-    //     std::vector<int> elements;
-    //     while (std::getline(gtStream, element, ','))
-    //     {
-    //         elements.push_back(cvRound(std::atof(element.c_str())));
-    //     }
-
-    //     if (elements.size() == 4) {
-    //         // ground-truth is rectangle
-    //         roi = cv::Rect(elements[0], elements[1], elements[2], elements[3]);
-    //     }
-    //     else if (elements.size() == 8) {
-    //         // ground-truth is polygon
-    //         int xMin = cvRound(min(elements[0], min(elements[2], min(elements[4], elements[6]))));
-    //         int yMin = cvRound(min(elements[1], min(elements[3], min(elements[5], elements[7]))));
-    //         int xMax = cvRound(max(elements[0], max(elements[2], max(elements[4], elements[6]))));
-    //         int yMax = cvRound(max(elements[1], max(elements[3], max(elements[5], elements[7]))));
-    //         roi = cv::Rect(xMin, yMin, xMax - xMin, yMax - yMin);
-
-    //         // create mask from polygon and set it to the tracker
-    //         cv::Rect aaRect = cv::Rect(xMin, yMin, xMax - xMin, yMax - yMin);
-    //         cout << aaRect.size() << endl;
-    //         Mat mask = Mat::zeros(aaRect.size(), CV_8UC1);
-    //         const int n = 4;
-    //         std::vector<cv::Point> poly_points(n);
-    //         //Translate x and y to rects start position
-    //         int sx = aaRect.x;
-    //         int sy = aaRect.y;
-    //         for (int i = 0; i < n; ++i) {
-    //             poly_points[i] = Point(elements[2 * i] - sx, elements[2 * i + 1] - sy);
-    //         }
-    //         cv::fillConvexPoly(mask, poly_points, Scalar(1.0), 8);
-    //         mask.convertTo(mask, CV_32FC1);
-    //         tracker->setInitialMask(mask);
-    //     }
-    //     else {
-    //         std::cout << "Number of ground-truth elements is not 4 or 8." << std::endl;
-    //     }
-
-    // }
-    // else {
-        // second argument is not given - user selects target
-        roi = selectROI("tracker", frame, true, false);
-    // }
+   
+    roi = selectROI("tracker", frame, true, false);
+    
 
     //quit if ROI was not selected
     if (roi.width == 0 || roi.height == 0)
