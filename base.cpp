@@ -56,7 +56,7 @@ int main(int argc, char** argv)
     // parameters.psr_threshold = 0.035f;
 
     // parameters.
-    Ptr<TrackerCSRT> tracker = TrackerCSRT::create(parameters);
+    Ptr<TrackerCSRT> tracker = TrackerCSRT::create(parameters); //#TODO:
 
 
 
