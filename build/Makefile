@@ -150,6 +150,33 @@ base.cpp.s:
 	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/base.cpp.s
 .PHONY : base.cpp.s
 
+src/csrt.o: src/csrt.cpp.o
+
+.PHONY : src/csrt.o
+
+# target to build an object file
+src/csrt.cpp.o:
+	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/src/csrt.cpp.o
+.PHONY : src/csrt.cpp.o
+
+src/csrt.i: src/csrt.cpp.i
+
+.PHONY : src/csrt.i
+
+# target to preprocess a source file
+src/csrt.cpp.i:
+	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/src/csrt.cpp.i
+.PHONY : src/csrt.cpp.i
+
+src/csrt.s: src/csrt.cpp.s
+
+.PHONY : src/csrt.s
+
+# target to generate assembly for a file
+src/csrt.cpp.s:
+	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/src/csrt.cpp.s
+.PHONY : src/csrt.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +189,9 @@ help:
 	@echo "... base.o"
 	@echo "... base.i"
 	@echo "... base.s"
+	@echo "... src/csrt.o"
+	@echo "... src/csrt.i"
+	@echo "... src/csrt.s"
 .PHONY : help
 
 

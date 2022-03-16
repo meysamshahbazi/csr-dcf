@@ -74,12 +74,12 @@ clean: CMakeFiles/CSR_DCF.dir/clean
 CMakeFiles/CSR_DCF.dir/all:
 	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/depend
 	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/meysam/test-apps/csr-dcf/build/CMakeFiles --progress-num=1,2 "Built target CSR_DCF"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/meysam/test-apps/csr-dcf/build/CMakeFiles --progress-num=1,2,3 "Built target CSR_DCF"
 .PHONY : CMakeFiles/CSR_DCF.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/CSR_DCF.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/meysam/test-apps/csr-dcf/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/meysam/test-apps/csr-dcf/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/CSR_DCF.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/meysam/test-apps/csr-dcf/build/CMakeFiles 0
 .PHONY : CMakeFiles/CSR_DCF.dir/rule

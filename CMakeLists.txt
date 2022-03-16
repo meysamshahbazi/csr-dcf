@@ -19,8 +19,15 @@ message(STATUS "    version: ${OpenCV_VERSION}")
 message(STATUS "    libraries: ${OpenCV_LIBS}")
 message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
 
+include_directories(${CMAKE_SOURCE_DIR}/src/)
+# add_subdirectory(src)
+
 # Declare the executable target built from your sources
-add_executable(${PROJECT_NAME} base.cpp)
+
+
+add_executable(${PROJECT_NAME} base.cpp src/csrt.cpp)
+
+
 
 # Link your application with OpenCV libraries
 target_link_libraries(${PROJECT_NAME} PRIVATE ${OpenCV_LIBS})

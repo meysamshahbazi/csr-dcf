@@ -5,6 +5,7 @@
 #include <iostream>
 #include <cstring>
 #include <fstream>
+#include "src/csrt.hpp"
 
 using namespace std;
 using namespace cv;
@@ -26,7 +27,8 @@ int main(int argc, char** argv)
 
 
     // create the tracker
-    cv::TrackerCSRT::Params parameters = cv::TrackerCSRT::Params();
+    CSRT csrt(1);
+   /* cv::TrackerCSRT::Params parameters = cv::TrackerCSRT::Params();
     // parameters.use_channel_weights = true;
     // parameters.use_segmentation = true;
     // parameters.use_hog = true;
@@ -57,6 +59,7 @@ int main(int argc, char** argv)
 
     // parameters.
     Ptr<TrackerCSRT> tracker = TrackerCSRT::create(parameters); //#TODO:
+
 
 
 
@@ -120,6 +123,8 @@ int main(int argc, char** argv)
 
     cout << "Elapsed sec: " << static_cast<double>(tick_counter) / cv::getTickFrequency() << endl;
     cout << "FPS: " << ((double)(frame_idx)) / (static_cast<double>(tick_counter) / cv::getTickFrequency()) << endl;
+    */
+   return 0;
 }
 
 

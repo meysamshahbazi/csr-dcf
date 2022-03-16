@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/CSR_DCF.dir/base.cpp.o"
+  "CMakeFiles/CSR_DCF.dir/src/csrt.cpp.o"
   "CSR_DCF"
   "CSR_DCF.pdb"
 )
