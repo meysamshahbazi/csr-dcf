@@ -28,7 +28,7 @@ int main(int argc, char** argv)
 
     // create the tracker
     CSRT csrt(1);
-   /* cv::TrackerCSRT::Params parameters = cv::TrackerCSRT::Params();
+    cv::TrackerCSRT::Params parameters = cv::TrackerCSRT::Params();
     // parameters.use_channel_weights = true;
     // parameters.use_segmentation = true;
     // parameters.use_hog = true;
@@ -55,7 +55,7 @@ int main(int argc, char** argv)
     // parameters.histogram_bins = 16;
     // parameters.background_ratio = 2;
     // parameters.histogram_lr = 0.04f;
-    // parameters.psr_threshold = 0.035f;
+    parameters.psr_threshold = 0.1f;
 
     // parameters.
     Ptr<TrackerCSRT> tracker = TrackerCSRT::create(parameters); //#TODO:
@@ -123,7 +123,7 @@ int main(int argc, char** argv)
 
     cout << "Elapsed sec: " << static_cast<double>(tick_counter) / cv::getTickFrequency() << endl;
     cout << "FPS: " << ((double)(frame_idx)) / (static_cast<double>(tick_counter) / cv::getTickFrequency()) << endl;
-    */
+    
    return 0;
 }
 

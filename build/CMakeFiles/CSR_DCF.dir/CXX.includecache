@@ -24,6 +24,10 @@ fstream
 src/csrt.hpp
 /home/meysam/test-apps/csr-dcf/src/csrt.hpp
 
+/home/meysam/test-apps/csr-dcf/src/csrt.cpp
+csrt.hpp
+/home/meysam/test-apps/csr-dcf/src/csrt.hpp
+
 /home/meysam/test-apps/csr-dcf/src/csrt.hpp
 opencv2/imgproc.hpp
 -
