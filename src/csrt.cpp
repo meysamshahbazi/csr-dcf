@@ -1,19 +1,23 @@
 
 #include "csrt.hpp"
 
-CSRT::CSRT() {};
+CsrtParams params;
 
-CSRT::CSRT(int x )
+
+CSRT::CSRT(CsrtParams csrtparams=params) 
+    :csrtparams(csrtparams)
 {
-    
-    std::cout<<"CSRT"<<histogram_bins<<std::endl;
-    
-}
+    std::cout<<csrtparams.use_channel_weights<<std::endl;
+
+};
+
+
+
+
 
 CSRT::~CSRT()
 {
-    std::cout<<"CSRT"<<std::endl;
-    
+
 }
 
 void CSRT::init(cv::InputArray img_, const cv::Rect & boundingBox)
@@ -21,6 +25,9 @@ void CSRT::init(cv::InputArray img_, const cv::Rect & boundingBox)
     cv::Mat img = img_.getMat();
     current_scale_factor = 1.0;
     bounding_box = boundingBox;
+    image_size = image_size;
+    bounding_box = boundingBox;
+    
 
     
 

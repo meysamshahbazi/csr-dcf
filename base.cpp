@@ -27,37 +27,13 @@ int main(int argc, char** argv)
 
 
     // create the tracker
-    CSRT csrt(1);
+    CsrtParams params;
+
+    CSRT csrt {params};
     cv::TrackerCSRT::Params parameters = cv::TrackerCSRT::Params();
-    // parameters.use_channel_weights = true;
-    // parameters.use_segmentation = true;
-    // parameters.use_hog = true;
-    // parameters.use_color_names = true;
-    // parameters.use_gray = true;
-    // parameters.use_rgb = true;
-    // parameters.window_function = "hann";
-    // parameters.kaiser_alpha = 3.75f;
-    // parameters.cheb_attenuation = 45;
-    // parameters.padding = 3.0f;
-    // parameters.template_size = 200;
-    // parameters.gsl_sigma = 1.0f;
-    // parameters.hog_orientations = 9;
-    // parameters.hog_clip = 0.2f;
-    // parameters.num_hog_channels_used = 18;
-    // parameters.filter_lr = 0.02f;
-    // parameters.weights_lr = 0.02f;
-    // parameters.admm_iterations = 4;
-    // parameters.number_of_scales = 4;
-    // parameters.scale_sigma_factor = 0.250f;
-    // parameters.scale_model_max_area = 512.0f;
-    // parameters.scale_lr = 0.025f;
-    // parameters.scale_step = 1.020f;
-    // parameters.histogram_bins = 16;
-    // parameters.background_ratio = 2;
-    // parameters.histogram_lr = 0.04f;
-    parameters.psr_threshold = 0.1f;
 
     // parameters.
+    
     Ptr<TrackerCSRT> tracker = TrackerCSRT::create(parameters); //#TODO:
 
 
@@ -83,6 +59,7 @@ int main(int argc, char** argv)
     // initialize the tracker
     int64 t1 = cv::getTickCount();
     tracker->init(frame, roi);
+    csrt.init(frame,roi);
     int64 t2 = cv::getTickCount();
     int64 tick_counter = t2 - t1;
 
