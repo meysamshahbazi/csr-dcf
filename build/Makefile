@@ -123,59 +123,32 @@ CSR_DCF/fast:
 	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/build
 .PHONY : CSR_DCF/fast
 
-base.o: base.cpp.o
+reimp.o: reimp.cpp.o
 
-.PHONY : base.o
-
-# target to build an object file
-base.cpp.o:
-	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/base.cpp.o
-.PHONY : base.cpp.o
-
-base.i: base.cpp.i
-
-.PHONY : base.i
-
-# target to preprocess a source file
-base.cpp.i:
-	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/base.cpp.i
-.PHONY : base.cpp.i
-
-base.s: base.cpp.s
-
-.PHONY : base.s
-
-# target to generate assembly for a file
-base.cpp.s:
-	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/base.cpp.s
-.PHONY : base.cpp.s
-
-src/csrt.o: src/csrt.cpp.o
-
-.PHONY : src/csrt.o
+.PHONY : reimp.o
 
 # target to build an object file
-src/csrt.cpp.o:
-	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/src/csrt.cpp.o
-.PHONY : src/csrt.cpp.o
+reimp.cpp.o:
+	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/reimp.cpp.o
+.PHONY : reimp.cpp.o
 
-src/csrt.i: src/csrt.cpp.i
+reimp.i: reimp.cpp.i
 
-.PHONY : src/csrt.i
+.PHONY : reimp.i
 
 # target to preprocess a source file
-src/csrt.cpp.i:
-	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/src/csrt.cpp.i
-.PHONY : src/csrt.cpp.i
+reimp.cpp.i:
+	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/reimp.cpp.i
+.PHONY : reimp.cpp.i
 
-src/csrt.s: src/csrt.cpp.s
+reimp.s: reimp.cpp.s
 
-.PHONY : src/csrt.s
+.PHONY : reimp.s
 
 # target to generate assembly for a file
-src/csrt.cpp.s:
-	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/src/csrt.cpp.s
-.PHONY : src/csrt.cpp.s
+reimp.cpp.s:
+	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/reimp.cpp.s
+.PHONY : reimp.cpp.s
 
 # Help Target
 help:
@@ -186,12 +159,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CSR_DCF"
-	@echo "... base.o"
-	@echo "... base.i"
-	@echo "... base.s"
-	@echo "... src/csrt.o"
-	@echo "... src/csrt.i"
-	@echo "... src/csrt.s"
+	@echo "... reimp.o"
+	@echo "... reimp.i"
+	@echo "... reimp.s"
 .PHONY : help
 
 

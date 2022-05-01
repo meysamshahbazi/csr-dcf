@@ -25,7 +25,7 @@ include_directories(${CMAKE_SOURCE_DIR}/src/)
 # Declare the executable target built from your sources
 
 
-add_executable(${PROJECT_NAME} base.cpp src/csrt.cpp)
+add_executable(${PROJECT_NAME} reimp.cpp )
 
 
 

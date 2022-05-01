@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/meysam/test-apps/csr-dcf/base.cpp
+/home/meysam/test-apps/csr-dcf/reimp.cpp
 opencv2/core/utility.hpp
 -
 opencv2/tracking.hpp
@@ -21,15 +21,7 @@ cstring
 -
 fstream
 -
-src/csrt.hpp
-/home/meysam/test-apps/csr-dcf/src/csrt.hpp
-
-/home/meysam/test-apps/csr-dcf/src/csrt.hpp
-opencv2/imgproc.hpp
--
-opencv2/core.hpp
--
-iostream
+algorithm
 -
 
 /usr/local/include/opencv4/opencv2/core.hpp

@@ -27,7 +27,9 @@ void CSRT::init(cv::InputArray img_, const cv::Rect & boundingBox)
     bounding_box = boundingBox;
     image_size = image_size;
     bounding_box = boundingBox;
-    
+
+    cell_size = cvFloor(std::min(4.0, std::max(1.0,
+    static_cast<double>cvCeil((bounding_box.width*bounding_box.height/400.0)))));
 
     
 

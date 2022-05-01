@@ -4,6 +4,15 @@
 #include <opencv2/core.hpp>
 #include <iostream>
 
+#include <fstream>
+#include <iostream>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <iterator>
+
+
+
 using namespace cv;
 
 
