@@ -19,8 +19,8 @@ Size2f template_size;
 float rescale_ratio;
 Size2i rescaled_template_size;
 
-Point2f object_center
-
+Point2f object_center;
+Mat yf;
 
 
 struct Params
@@ -67,6 +67,16 @@ float  padding =0;
 
 void init(InputArray image_, const Rect & boundingBox);
 bool update(InputArray image_, Rect& boundingBox);
+Mat gaussian_shaped_labels(const float sigma, const int w, const int h);
+Mat circshift(Mat matrix, int dx, int dy);
+
+inline int modul(int a, int b)
+{
+    // function calculates the module of two numbers and it takes into account also negative numbers
+    return ((a % b) + b) % b;
+}
+
+
 
 int main(int argc, char** argv)
 {
@@ -169,8 +179,10 @@ void init(InputArray image_, const Rect & boundingBox)
 
     // rescale must be less than one 
     cout<<"rescale_ratio: "<<rescale_ratio<<endl; 
-    rescale_ratio = std::min<float>(rescale_ratio,1);
-
+    // rescale_ratio = std::max<float>(rescale_ratio,1);
+    if(rescale_ratio > 1)  {
+        rescale_ratio = 1;
+    }
     cout<<"rescale_ratio: "<<rescale_ratio<<endl; 
 
     // rescaled template size with rescale ratio
@@ -181,11 +193,20 @@ void init(InputArray image_, const Rect & boundingBox)
     // find center of object in order to construct center of ideal guassian response 
     object_center = Point2f(static_cast<float>(boundingBox.x) + original_target_size.width/2.0f,
                             static_cast<float>(boundingBox.y) + original_target_size.height/2.0f );
+    cout<<"rescaled_template_size: "<<rescaled_template_size<<endl; 
+    // create ture lable of guassian shape of y
+    yf = gaussian_shaped_labels(params.gsl_sigma,
+            rescaled_template_size.width/cell_size,
+            rescaled_template_size.height/cell_size
+    );
 
-    
 
-    cout<<"cell_size: "<<(bounding_box.width * bounding_box.height)/400.0<<endl;
-    cout << "template_size "<<template_size<<endl;
+
+    // namedWindow("YF",WINDOW_NORMAL);
+    // imshow("YF",yf);
+    // waitKey(0);
+    cout<<"cell_size: "<<cell_size<<endl;
+    cout <<"template_size "<<rescaled_template_size<<endl;
 
 
 
@@ -197,4 +218,53 @@ bool update(InputArray image_, Rect& boundingBox)
 {
     return true;
 
+}
+
+Mat gaussian_shaped_labels(const float sigma, const int w, const int h)
+{
+
+    // create 2D Gaussian peak, convert to Fourier space and stores it into the yf
+
+    Mat y = Mat::zeros(h, w, CV_32F);
+    float w2 = static_cast<float>(cvFloor(w/2));
+    float h2 = static_cast<float>(cvFloor(h/2));
+    // create guassian which peak is on (h2,w2)
+    // so the center of window is the peak
+    for (int i=0;i<y.rows;i++)
+    {
+        for (int j=0;j<y.cols; j++)
+        {
+            y.at<float>(i,j) = (float) exp((-0.5/pow(sigma,2))*(pow(i+1-h2,2)+pow(j+1-w2,2)) );
+        }
+    }
+
+    // shift guassian
+    y = circshift(y, -cvFloor(y.cols/2), -cvFloor(y.rows/2));
+    //calclulate FFT of y
+    Mat yf;
+    dft(y,yf,DFT_COMPLEX_OUTPUT);
+    
+
+    return yf; 
+}
+
+
+Mat circshift(Mat matrix, int dx, int dy)
+{
+    Mat matrix_out = matrix.clone();
+
+    int idx_y = 0;
+    int idx_x = 0;
+
+    for(int i=0;i<matrix.rows; i++)
+    {
+        for( int j = 0;j < matrix.cols; j ++)
+        {
+            idx_y = modul(i+dy+1,matrix.rows);
+            idx_x = modul(j+dx+1,matrix.cols);
+            matrix_out.at<float>(idx_y,idx_x) = matrix.at<float>(i,j);
+
+        }
+    }
+    return matrix_out;
 }
