@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/meysam/test-apps/csr-dcf
+CMAKE_SOURCE_DIR = /home/meysam/test-apps/csr-dcf3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/meysam/test-apps/csr-dcf/build
+CMAKE_BINARY_DIR = /home/meysam/test-apps/csr-dcf3/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/CSR_DCF.dir/depend.make
@@ -57,27 +57,87 @@ include CMakeFiles/CSR_DCF.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/CSR_DCF.dir/flags.make
 
-CMakeFiles/CSR_DCF.dir/reimp.cpp.o: CMakeFiles/CSR_DCF.dir/flags.make
-CMakeFiles/CSR_DCF.dir/reimp.cpp.o: ../reimp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/meysam/test-apps/csr-dcf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CSR_DCF.dir/reimp.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CSR_DCF.dir/reimp.cpp.o -c /home/meysam/test-apps/csr-dcf/reimp.cpp
+CMakeFiles/CSR_DCF.dir/main.cpp.o: CMakeFiles/CSR_DCF.dir/flags.make
+CMakeFiles/CSR_DCF.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/meysam/test-apps/csr-dcf3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CSR_DCF.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CSR_DCF.dir/main.cpp.o -c /home/meysam/test-apps/csr-dcf3/main.cpp
 
-CMakeFiles/CSR_DCF.dir/reimp.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CSR_DCF.dir/reimp.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/meysam/test-apps/csr-dcf/reimp.cpp > CMakeFiles/CSR_DCF.dir/reimp.cpp.i
+CMakeFiles/CSR_DCF.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CSR_DCF.dir/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/meysam/test-apps/csr-dcf3/main.cpp > CMakeFiles/CSR_DCF.dir/main.cpp.i
 
-CMakeFiles/CSR_DCF.dir/reimp.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CSR_DCF.dir/reimp.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/meysam/test-apps/csr-dcf/reimp.cpp -o CMakeFiles/CSR_DCF.dir/reimp.cpp.s
+CMakeFiles/CSR_DCF.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CSR_DCF.dir/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/meysam/test-apps/csr-dcf3/main.cpp -o CMakeFiles/CSR_DCF.dir/main.cpp.s
+
+CMakeFiles/CSR_DCF.dir/CSRT.cpp.o: CMakeFiles/CSR_DCF.dir/flags.make
+CMakeFiles/CSR_DCF.dir/CSRT.cpp.o: ../CSRT.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/meysam/test-apps/csr-dcf3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CSR_DCF.dir/CSRT.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CSR_DCF.dir/CSRT.cpp.o -c /home/meysam/test-apps/csr-dcf3/CSRT.cpp
+
+CMakeFiles/CSR_DCF.dir/CSRT.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CSR_DCF.dir/CSRT.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/meysam/test-apps/csr-dcf3/CSRT.cpp > CMakeFiles/CSR_DCF.dir/CSRT.cpp.i
+
+CMakeFiles/CSR_DCF.dir/CSRT.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CSR_DCF.dir/CSRT.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/meysam/test-apps/csr-dcf3/CSRT.cpp -o CMakeFiles/CSR_DCF.dir/CSRT.cpp.s
+
+CMakeFiles/CSR_DCF.dir/CSRTSegmentation.cpp.o: CMakeFiles/CSR_DCF.dir/flags.make
+CMakeFiles/CSR_DCF.dir/CSRTSegmentation.cpp.o: ../CSRTSegmentation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/meysam/test-apps/csr-dcf3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CSR_DCF.dir/CSRTSegmentation.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CSR_DCF.dir/CSRTSegmentation.cpp.o -c /home/meysam/test-apps/csr-dcf3/CSRTSegmentation.cpp
+
+CMakeFiles/CSR_DCF.dir/CSRTSegmentation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CSR_DCF.dir/CSRTSegmentation.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/meysam/test-apps/csr-dcf3/CSRTSegmentation.cpp > CMakeFiles/CSR_DCF.dir/CSRTSegmentation.cpp.i
+
+CMakeFiles/CSR_DCF.dir/CSRTSegmentation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CSR_DCF.dir/CSRTSegmentation.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/meysam/test-apps/csr-dcf3/CSRTSegmentation.cpp -o CMakeFiles/CSR_DCF.dir/CSRTSegmentation.cpp.s
+
+CMakeFiles/CSR_DCF.dir/CSRTScaleEstimation.cpp.o: CMakeFiles/CSR_DCF.dir/flags.make
+CMakeFiles/CSR_DCF.dir/CSRTScaleEstimation.cpp.o: ../CSRTScaleEstimation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/meysam/test-apps/csr-dcf3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CSR_DCF.dir/CSRTScaleEstimation.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CSR_DCF.dir/CSRTScaleEstimation.cpp.o -c /home/meysam/test-apps/csr-dcf3/CSRTScaleEstimation.cpp
+
+CMakeFiles/CSR_DCF.dir/CSRTScaleEstimation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CSR_DCF.dir/CSRTScaleEstimation.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/meysam/test-apps/csr-dcf3/CSRTScaleEstimation.cpp > CMakeFiles/CSR_DCF.dir/CSRTScaleEstimation.cpp.i
+
+CMakeFiles/CSR_DCF.dir/CSRTScaleEstimation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CSR_DCF.dir/CSRTScaleEstimation.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/meysam/test-apps/csr-dcf3/CSRTScaleEstimation.cpp -o CMakeFiles/CSR_DCF.dir/CSRTScaleEstimation.cpp.s
+
+CMakeFiles/CSR_DCF.dir/CSRTUtils.cpp.o: CMakeFiles/CSR_DCF.dir/flags.make
+CMakeFiles/CSR_DCF.dir/CSRTUtils.cpp.o: ../CSRTUtils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/meysam/test-apps/csr-dcf3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CSR_DCF.dir/CSRTUtils.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CSR_DCF.dir/CSRTUtils.cpp.o -c /home/meysam/test-apps/csr-dcf3/CSRTUtils.cpp
+
+CMakeFiles/CSR_DCF.dir/CSRTUtils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CSR_DCF.dir/CSRTUtils.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/meysam/test-apps/csr-dcf3/CSRTUtils.cpp > CMakeFiles/CSR_DCF.dir/CSRTUtils.cpp.i
+
+CMakeFiles/CSR_DCF.dir/CSRTUtils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CSR_DCF.dir/CSRTUtils.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/meysam/test-apps/csr-dcf3/CSRTUtils.cpp -o CMakeFiles/CSR_DCF.dir/CSRTUtils.cpp.s
 
 # Object files for target CSR_DCF
 CSR_DCF_OBJECTS = \
-"CMakeFiles/CSR_DCF.dir/reimp.cpp.o"
+"CMakeFiles/CSR_DCF.dir/main.cpp.o" \
+"CMakeFiles/CSR_DCF.dir/CSRT.cpp.o" \
+"CMakeFiles/CSR_DCF.dir/CSRTSegmentation.cpp.o" \
+"CMakeFiles/CSR_DCF.dir/CSRTScaleEstimation.cpp.o" \
+"CMakeFiles/CSR_DCF.dir/CSRTUtils.cpp.o"
 
 # External object files for target CSR_DCF
 CSR_DCF_EXTERNAL_OBJECTS =
 
-CSR_DCF: CMakeFiles/CSR_DCF.dir/reimp.cpp.o
+CSR_DCF: CMakeFiles/CSR_DCF.dir/main.cpp.o
+CSR_DCF: CMakeFiles/CSR_DCF.dir/CSRT.cpp.o
+CSR_DCF: CMakeFiles/CSR_DCF.dir/CSRTSegmentation.cpp.o
+CSR_DCF: CMakeFiles/CSR_DCF.dir/CSRTScaleEstimation.cpp.o
+CSR_DCF: CMakeFiles/CSR_DCF.dir/CSRTUtils.cpp.o
 CSR_DCF: CMakeFiles/CSR_DCF.dir/build.make
 CSR_DCF: /usr/local/lib/libopencv_gapi.so.4.5.5
 CSR_DCF: /usr/local/lib/libopencv_stitching.so.4.5.5
@@ -147,7 +207,7 @@ CSR_DCF: /usr/local/lib/libopencv_cudaarithm.so.4.5.5
 CSR_DCF: /usr/local/lib/libopencv_core.so.4.5.5
 CSR_DCF: /usr/local/lib/libopencv_cudev.so.4.5.5
 CSR_DCF: CMakeFiles/CSR_DCF.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/meysam/test-apps/csr-dcf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable CSR_DCF"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/meysam/test-apps/csr-dcf3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable CSR_DCF"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CSR_DCF.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -160,6 +220,6 @@ CMakeFiles/CSR_DCF.dir/clean:
 .PHONY : CMakeFiles/CSR_DCF.dir/clean
 
 CMakeFiles/CSR_DCF.dir/depend:
-	cd /home/meysam/test-apps/csr-dcf/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/meysam/test-apps/csr-dcf /home/meysam/test-apps/csr-dcf /home/meysam/test-apps/csr-dcf/build /home/meysam/test-apps/csr-dcf/build /home/meysam/test-apps/csr-dcf/build/CMakeFiles/CSR_DCF.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/meysam/test-apps/csr-dcf3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/meysam/test-apps/csr-dcf3 /home/meysam/test-apps/csr-dcf3 /home/meysam/test-apps/csr-dcf3/build /home/meysam/test-apps/csr-dcf3/build /home/meysam/test-apps/csr-dcf3/build/CMakeFiles/CSR_DCF.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/CSR_DCF.dir/depend
 

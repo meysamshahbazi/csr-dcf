@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/meysam/test-apps/csr-dcf
+CMAKE_SOURCE_DIR = /home/meysam/test-apps/csr-dcf3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/meysam/test-apps/csr-dcf/build
+CMAKE_BINARY_DIR = /home/meysam/test-apps/csr-dcf3/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/meysam/test-apps/csr-dcf/build/CMakeFiles /home/meysam/test-apps/csr-dcf/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/meysam/test-apps/csr-dcf3/build/CMakeFiles /home/meysam/test-apps/csr-dcf3/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/meysam/test-apps/csr-dcf/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/meysam/test-apps/csr-dcf3/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,32 +123,140 @@ CSR_DCF/fast:
 	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/build
 .PHONY : CSR_DCF/fast
 
-reimp.o: reimp.cpp.o
+CSRT.o: CSRT.cpp.o
 
-.PHONY : reimp.o
+.PHONY : CSRT.o
 
 # target to build an object file
-reimp.cpp.o:
-	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/reimp.cpp.o
-.PHONY : reimp.cpp.o
+CSRT.cpp.o:
+	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/CSRT.cpp.o
+.PHONY : CSRT.cpp.o
 
-reimp.i: reimp.cpp.i
+CSRT.i: CSRT.cpp.i
 
-.PHONY : reimp.i
+.PHONY : CSRT.i
 
 # target to preprocess a source file
-reimp.cpp.i:
-	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/reimp.cpp.i
-.PHONY : reimp.cpp.i
+CSRT.cpp.i:
+	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/CSRT.cpp.i
+.PHONY : CSRT.cpp.i
 
-reimp.s: reimp.cpp.s
+CSRT.s: CSRT.cpp.s
 
-.PHONY : reimp.s
+.PHONY : CSRT.s
 
 # target to generate assembly for a file
-reimp.cpp.s:
-	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/reimp.cpp.s
-.PHONY : reimp.cpp.s
+CSRT.cpp.s:
+	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/CSRT.cpp.s
+.PHONY : CSRT.cpp.s
+
+CSRTScaleEstimation.o: CSRTScaleEstimation.cpp.o
+
+.PHONY : CSRTScaleEstimation.o
+
+# target to build an object file
+CSRTScaleEstimation.cpp.o:
+	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/CSRTScaleEstimation.cpp.o
+.PHONY : CSRTScaleEstimation.cpp.o
+
+CSRTScaleEstimation.i: CSRTScaleEstimation.cpp.i
+
+.PHONY : CSRTScaleEstimation.i
+
+# target to preprocess a source file
+CSRTScaleEstimation.cpp.i:
+	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/CSRTScaleEstimation.cpp.i
+.PHONY : CSRTScaleEstimation.cpp.i
+
+CSRTScaleEstimation.s: CSRTScaleEstimation.cpp.s
+
+.PHONY : CSRTScaleEstimation.s
+
+# target to generate assembly for a file
+CSRTScaleEstimation.cpp.s:
+	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/CSRTScaleEstimation.cpp.s
+.PHONY : CSRTScaleEstimation.cpp.s
+
+CSRTSegmentation.o: CSRTSegmentation.cpp.o
+
+.PHONY : CSRTSegmentation.o
+
+# target to build an object file
+CSRTSegmentation.cpp.o:
+	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/CSRTSegmentation.cpp.o
+.PHONY : CSRTSegmentation.cpp.o
+
+CSRTSegmentation.i: CSRTSegmentation.cpp.i
+
+.PHONY : CSRTSegmentation.i
+
+# target to preprocess a source file
+CSRTSegmentation.cpp.i:
+	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/CSRTSegmentation.cpp.i
+.PHONY : CSRTSegmentation.cpp.i
+
+CSRTSegmentation.s: CSRTSegmentation.cpp.s
+
+.PHONY : CSRTSegmentation.s
+
+# target to generate assembly for a file
+CSRTSegmentation.cpp.s:
+	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/CSRTSegmentation.cpp.s
+.PHONY : CSRTSegmentation.cpp.s
+
+CSRTUtils.o: CSRTUtils.cpp.o
+
+.PHONY : CSRTUtils.o
+
+# target to build an object file
+CSRTUtils.cpp.o:
+	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/CSRTUtils.cpp.o
+.PHONY : CSRTUtils.cpp.o
+
+CSRTUtils.i: CSRTUtils.cpp.i
+
+.PHONY : CSRTUtils.i
+
+# target to preprocess a source file
+CSRTUtils.cpp.i:
+	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/CSRTUtils.cpp.i
+.PHONY : CSRTUtils.cpp.i
+
+CSRTUtils.s: CSRTUtils.cpp.s
+
+.PHONY : CSRTUtils.s
+
+# target to generate assembly for a file
+CSRTUtils.cpp.s:
+	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/CSRTUtils.cpp.s
+.PHONY : CSRTUtils.cpp.s
+
+main.o: main.cpp.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/CSR_DCF.dir/build.make CMakeFiles/CSR_DCF.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -159,9 +267,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CSR_DCF"
-	@echo "... reimp.o"
-	@echo "... reimp.i"
-	@echo "... reimp.s"
+	@echo "... CSRT.o"
+	@echo "... CSRT.i"
+	@echo "... CSRT.s"
+	@echo "... CSRTScaleEstimation.o"
+	@echo "... CSRTScaleEstimation.i"
+	@echo "... CSRTScaleEstimation.s"
+	@echo "... CSRTSegmentation.o"
+	@echo "... CSRTSegmentation.i"
+	@echo "... CSRTSegmentation.s"
+	@echo "... CSRTUtils.o"
+	@echo "... CSRTUtils.i"
+	@echo "... CSRTUtils.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

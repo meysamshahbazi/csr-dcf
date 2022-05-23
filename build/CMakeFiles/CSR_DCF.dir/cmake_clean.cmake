@@ -1,5 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/CSR_DCF.dir/reimp.cpp.o"
+  "CMakeFiles/CSR_DCF.dir/CSRT.cpp.o"
+  "CMakeFiles/CSR_DCF.dir/CSRTScaleEstimation.cpp.o"
+  "CMakeFiles/CSR_DCF.dir/CSRTSegmentation.cpp.o"
+  "CMakeFiles/CSR_DCF.dir/CSRTUtils.cpp.o"
+  "CMakeFiles/CSR_DCF.dir/main.cpp.o"
   "CSR_DCF"
   "CSR_DCF.pdb"
 )

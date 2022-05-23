@@ -19,13 +19,13 @@ message(STATUS "    version: ${OpenCV_VERSION}")
 message(STATUS "    libraries: ${OpenCV_LIBS}")
 message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
 
-include_directories(${CMAKE_SOURCE_DIR}/src/)
+# include_directories(${CMAKE_SOURCE_DIR}/src/)
 # add_subdirectory(src)
 
 # Declare the executable target built from your sources
 
 
-add_executable(${PROJECT_NAME} reimp.cpp )
+add_executable(${PROJECT_NAME} main.cpp CSRT.cpp CSRTSegmentation.cpp CSRTScaleEstimation.cpp CSRTUtils.cpp)
 
 
 
