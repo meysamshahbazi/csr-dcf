@@ -6,13 +6,9 @@
 #include <cstring>
 #include <fstream>
 #include "CSRT.hpp"
+
 using namespace std;
 using namespace cv;
-
-
-
-
-
 
 
 int main(int argc, char** argv)
@@ -50,11 +46,11 @@ int main(int argc, char** argv)
     parameters.num_hog_channels_used = 12; // need to som e change in csrtUTILS file in 2 place 
     parameters.filter_lr = 0.02f; // 0.02f this is \etha in ALGO2 step 10
     parameters.weights_lr = 0.02f; // 0.02f this is \etha in ALGO2 step 11, it and perv line need to ba same  it effect on loss target
-    parameters.admm_iterations = 4; //4 number of step for algoritm 1
+    parameters.admm_iterations = 8; //4 number of step for algoritm 1
     //DSST MODULE---------------------------------------------------------------
     parameters.number_of_scales = 50; // 33 this effect on changeing scale of window 
     // parameters.scale_sigma_factor = 0.250f;
-    parameters.scale_model_max_area =512.0f;
+    parameters.scale_model_max_area =1024.0f;
     parameters.scale_lr = 0.025f; //0.025f 
     parameters.scale_step = 1.020f;
     // SEGMENTION MODULE parameters
@@ -76,34 +72,52 @@ int main(int argc, char** argv)
     // and read first frame
     Mat frame;
     cap >> frame;
-    Mat dst;
-    Mat lbp;
-    // cvtColor(frame, dst, COLOR_BGR2GRAY);
-    // OLBP_<unsigned char>(dst,lbp);
-    // imshow("dst", lbp);
-    // waitKey(0);
-
-    // target bounding box
-    Rect roi;
-   
-    // roi = selectROI("tracker", frame, true, false);
     
-    // roi = Rect(330,277,363-330,292-277);
-    roi = Rect(330,277,363-330,292-277);
-    rectangle(frame, roi, Scalar(255, 0, 0), 2, 1);
-    imshow("tracker", frame);
-    waitKey(0);
+    Rect roi;
 
+    std::string groundtruthPath = argv[2];
+    std::ifstream gtIfstream(groundtruthPath.c_str());
+    std::string gtLine;
+    getline(gtIfstream, gtLine);
+    // gtIfstream.close();
 
+    // parse the line by elements
+    std::stringstream gtStream(gtLine);
+    std::string element;
+    std::vector<int> elements;
+
+    while (std::getline(gtStream, element, ','))
+    {
+        elements.push_back(cvRound(std::atof(element.c_str())));
+    }
+
+    // std::cout<<elements.at(0)<<std::endl;
+    std::cout<<elements.size()<<std::endl;
+    Rect roi_gt;
+    if (elements.size() == 4) {
+        // ground-truth is rectangle
+        roi_gt = cv::Rect(elements[0], elements[1],
+                    elements[2]-elements[0], elements[3]-elements[1]);
+        roi_gt = cv::Rect(elements[0], elements[1],
+                    elements[2], elements[3]);
+
+    }    
+
+    // roi = selectROI("tracker", frame, true, false);
     //quit if ROI was not selected
-    if (roi.width == 0 || roi.height == 0)
+    if (roi_gt.width == 0 || roi_gt.height == 0)
         return 0;
 
     // initialize the tracker
     int64 t1 = cv::getTickCount();
-    tracker->init(frame, roi);
+    tracker->init(frame, roi_gt);
     int64 t2 = cv::getTickCount();
     int64 tick_counter = t2 - t1;
+
+    rectangle(frame, roi_gt, Scalar(0, 255, 0), 1, 1);
+    imshow("tracker", frame);
+    waitKey(0);
+
 
     // do the tracking
     // tick_counter = 0; 
@@ -117,6 +131,29 @@ int main(int argc, char** argv)
         // stop the program if no more images
         if (frame.rows == 0 || frame.cols == 0)
             break;
+        getline(gtIfstream, gtLine);
+         // parse the line by elements
+        std::stringstream gtStream(gtLine);
+        std::string element;
+        std::vector<int> elements;
+
+        while (std::getline(gtStream, element, ','))
+        {
+            elements.push_back(cvRound(std::atof(element.c_str())));
+        }
+
+        // std::cout<<elements.at(0)<<std::endl;
+        // Rect roi_gt;
+        if (elements.size() == 4) {
+            // ground-truth is rectangle
+            roi_gt = cv::Rect(elements[0], elements[1],
+                        elements[2]-elements[0], elements[3]-elements[1]);
+            roi_gt = cv::Rect(elements[0], elements[1],
+                    elements[2], elements[3]);
+
+        }    
+        
+
 
         // update the tracking result
         t1 = cv::getTickCount();
@@ -134,13 +171,14 @@ int main(int argc, char** argv)
         }
 
         // draw the tracked object and show the image
+        rectangle(frame, roi_gt, Scalar(0, 255, 0), 1, 1);
         rectangle(frame, roi, Scalar(255, 0, 0), 2, 1);
         imshow("tracker", frame);
 
         //quit on ESC button
         if (waitKey(1) == 27)break;
     }
-
+    gtIfstream.close();
     cout << "Elapsed sec: " << static_cast<double>(tick_counter) / cv::getTickFrequency() << endl;
     cout << "FPS: " << ((double)(frame_idx)) / (static_cast<double>(tick_counter) / cv::getTickFrequency()) << endl;
     

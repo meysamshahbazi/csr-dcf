@@ -147,11 +147,11 @@ std::vector<Mat> TrackerCSRTImpl::get_features(const Mat &patch, const Size2i &f
         features.insert(features.end(), cn.begin(), cn.end());
     }
     if(params.use_gray) {
-        Mat gray_m;
-        cvtColor(patch, gray_m, COLOR_BGR2GRAY);
-        resize(gray_m, gray_m, feature_size, 0, 0, INTER_CUBIC);
-        gray_m.convertTo(gray_m, CV_32FC1, 1.0/255.0, -0.5);
-        features.push_back(gray_m);
+        // Mat gray_m;
+        // cvtColor(patch, gray_m, COLOR_BGR2GRAY);
+        // resize(gray_m, gray_m, feature_size, 0, 0, INTER_CUBIC);
+        // gray_m.convertTo(gray_m, CV_32FC1, 1.0/255.0, -0.5);
+        // features.push_back(gray_m);
         //------------------------------------------------------
         // Mat lbp;
         // Mat gray_l;
@@ -160,6 +160,10 @@ std::vector<Mat> TrackerCSRTImpl::get_features(const Mat &patch, const Size2i &f
         // OLBP_<unsigned char>(gray_l,lbp);
         // lbp.convertTo(lbp, CV_32FC1, 1.0/255.0, -0.5);
         // features.push_back(lbp);
+
+        // gray_l.convertTo(gray_l, CV_32FC1, 1.0/255.0, -0.5);
+        // features.push_back(gray_l);
+
         //-------------------------------------------------------
         Mat hsv = bgr2hsv(patch);
         // Mat hsv = patch.clone();
@@ -563,6 +567,10 @@ void TrackerCSRTImpl::init(InputArray image_, const Rect& boundingBox)
         extract_histograms(hsv_img, bounding_box, hist_foreground, hist_background);
         filter_mask = segment_region(hsv_img, object_center, template_size,
                 original_target_size, current_scale_factor);
+
+        // namedWindow("filter_mask",WINDOW_NORMAL);
+        // imshow("filter_mask",filter_mask);
+        // waitKey(0);
         //update calculated mask with preset mask
         if(preset_mask.data){
             Mat preset_mask_padded = Mat::zeros(filter_mask.size(), filter_mask.type());
@@ -576,11 +584,11 @@ void TrackerCSRTImpl::init(InputArray image_, const Rect& boundingBox)
         resize(filter_mask, filter_mask, yf.size(), 0, 0, INTER_NEAREST);
           float my_area = static_cast<float>(sum(filter_mask)[0]);
 
-        cout<<"my_area  "<<my_area<<endl;
-        // namedWindow("filter_mask",WINDOW_NORMAL);
-        // imshow("filter_mask",filter_mask);
-        // waitKey(0);
+        // cout<<"my_area  "<<my_area<<endl;
+        // cout << "default_mask_area "<<default_mask_area<<endl;
+        
         if(check_mask_area(filter_mask, default_mask_area)) {
+            cout<< "IM HERE"<<endl;
             dilate(filter_mask , filter_mask, erode_element);
         } else {
             filter_mask = default_mask;
